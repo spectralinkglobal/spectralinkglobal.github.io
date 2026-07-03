@@ -22,16 +22,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Show project files
+        run: |
+          pwd
+          ls -la
+          cat package.json
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Install dependencies
-        run: npm install
+        run: npm install --include=dev
+
+      - name: Check Vite installation
+        run: |
+          ls -la node_modules/.bin || true
+          npx vite --version
 
       - name: Build project
         run: npm run build
