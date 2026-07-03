@@ -1,3 +1,4 @@
+```yaml
 name: Deploy to GitHub Pages
 
 on:
@@ -22,23 +23,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show project files
-        run: |
-          pwd
-          ls -la
-          cat package.json
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm install --include=dev
 
       - name: Check Vite installation
         run: |
+          echo "Node version:"
+          node -v
+
+          echo "NPM version:"
+          npm -v
+
+          echo "Checking node_modules/.bin..."
           ls -la node_modules/.bin || true
+
+          echo "Installed Vite package:"
+          npm ls vite || true
+
+          echo "Vite version:"
           npx vite --version
 
       - name: Build project
@@ -47,14 +55,14 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
 
     environment:
       name: github-pages
@@ -64,3 +72,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
