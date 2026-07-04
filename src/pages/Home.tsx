@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="section bg-[#0B2D5B] text-white">
-        <div className="container grid items-center gap-8 lg:grid-cols-2">
+        <div className="container grid items-center gap-8 ">
           <div>
             <h2 className="text-3xl font-black md:text-5xl">
               Let&apos;s Begin a Journey of Everlasting Business Partnership
@@ -136,7 +136,7 @@ export default function Home() {
             </p>
           </div>
 
-          <ContactForm />
+          {/* <ContactForm /> */}
         </div>
       </section>
     </>
