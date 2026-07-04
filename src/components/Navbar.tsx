@@ -4,7 +4,7 @@ import { Mail, Menu, Phone, X } from 'lucide-react';
 
 import { company, nav } from '../data/site';
 
-const EMAIL_ADDRESS = 'mansipatel241@gmail.com';
+const EMAIL_ADDRESS = 'HRHEAD@SPECTRALINKGLOBAL.COM';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
