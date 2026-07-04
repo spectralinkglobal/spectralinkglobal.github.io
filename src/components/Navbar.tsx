@@ -21,9 +21,11 @@ export default function Navbar() {
             className="group flex shrink-0 items-center gap-3"
             aria-label="Spectralink Global home"
           >
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#0B2D5B] text-xl font-black text-white shadow-sm transition-transform group-hover:scale-105">
-              S
-            </span>
+<img
+  src="/Logo.png"
+  alt="Spectralink Global Logistics"
+  className="h-17 w-17 object-contain transition-transform group-hover:scale-105"
+/>
 
             <span className="flex flex-col leading-none">
               <span className="text-lg font-black tracking-tight text-[#0B2D5B]">
