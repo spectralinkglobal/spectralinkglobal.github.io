@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   CheckCircle2,
-  Globe2,
   PackageCheck,
   Plane,
   Ship,
@@ -155,82 +154,13 @@ export function Values() {
 
 export function WorldMapVisual() {
   return (
-    <div className="map-grid relative min-h-[430px] overflow-hidden rounded-[2rem] border border-blue-100 bg-[#EEF5FF] p-6 sm:p-8">
-      <div className="absolute -right-8 -top-8 opacity-[0.12]">
-        <Globe2 size={230} className="text-[#0B2D5B]" />
-      </div>
+    <div className="relative min-h-[430px] overflow-hidden rounded-[2rem] border border-blue-100 bg-[#EEF5FF]">
+      <img
+        src="/ship.jpeg"
+        alt="Container ship carrying global freight across ocean routes"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
 
-      <div className="relative z-10">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-white px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#FF8A00] shadow-sm">
-            Worldwide Connectivity
-          </span>
-
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Global coordination
-          </span>
-        </div>
-
-        <h3 className="mt-5 max-w-md text-3xl font-black leading-tight text-[#0B2D5B] md:text-4xl">
-          Connecting cargo across global trade routes
-        </h3>
-
-        <p className="mt-4 max-w-lg text-base leading-7 text-slate-600 md:text-lg">
-          Global partners, regional expertise, and dependable end-to-end
-          coordination for international shipments.
-        </p>
-      </div>
-
-      <div className="relative z-10 mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="rounded-xl border border-blue-100 bg-white/70 p-4">
-          <Plane size={19} className="text-[#FF8A00]" />
-
-          <p className="mt-3 text-sm font-black text-[#0B2D5B]">
-            Air Freight
-          </p>
-
-          <p className="mt-1 text-xs leading-5 text-slate-500">
-            Time-sensitive shipment coordination.
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-blue-100 bg-white/70 p-4">
-          <Ship size={19} className="text-[#FF8A00]" />
-
-          <p className="mt-3 text-sm font-black text-[#0B2D5B]">
-            Ocean Freight
-          </p>
-
-          <p className="mt-1 text-xs leading-5 text-slate-500">
-            Reliable movement across sea routes.
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-blue-100 bg-white/70 p-4">
-          <ShieldCheck size={19} className="text-[#FF8A00]" />
-
-          <p className="mt-3 text-sm font-black text-[#0B2D5B]">
-            Customs Support
-          </p>
-
-          <p className="mt-1 text-xs leading-5 text-slate-500">
-            Documentation and clearance support.
-          </p>
-        </div>
-
-        <div className="rounded-xl border border-blue-100 bg-white/70 p-4">
-          <PackageCheck size={19} className="text-[#FF8A00]" />
-
-          <p className="mt-3 text-sm font-black text-[#0B2D5B]">
-            CFS Operations
-          </p>
-
-          <p className="mt-1 text-xs leading-5 text-slate-500">
-            Cargo handling from carting to vessel loading.
-          </p>
-        </div>
-      </div>
-    </div>
+     </div>
   );
 }
