@@ -42,22 +42,18 @@ export default function Footer() {
             <Link
               to="/"
               className="group inline-flex items-center gap-4"
-              aria-label="Spectralink Global home"
+              aria-label="Spectralink Global Logistics Pvt Ltd home"
             >
               <img
                 src="/Logo.png"
-                alt="Spectralink Global Logistics"
+                alt="Spectralink Global Logistics Pvt Ltd"
                 className="h-17 w-17 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
               />
 
-              <span className="flex flex-col justify-center">
-                <span className="block text-2xl font-black leading-none tracking-tight text-[#0B2D5B]">
-                  Spectralink Global
-                </span>
-
-                <span className="mt-2 block text-sm font-semibold leading-none text-[#0B2D5B]/75">
-                  Freight &amp; Logistics
-                </span>
+              <span className="max-w-[250px] text-xl font-black leading-[1.15] tracking-tight text-[#0B2D5B]">
+                Spectralink Global
+                <br />
+                Logistics Pvt Ltd
               </span>
             </Link>
 
@@ -68,7 +64,7 @@ export default function Footer() {
 
             <a
               href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
-                'Logistics Enquiry - Spectralink Global'
+                'Logistics Enquiry - Spectralink Global Logistics Pvt Ltd'
               )}`}
               className="group mt-7 inline-flex items-center gap-2 text-base font-bold text-[#0B2D5B] transition-colors duration-200 hover:text-[#FF9D2E]"
             >

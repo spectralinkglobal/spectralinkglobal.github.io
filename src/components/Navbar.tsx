@@ -13,33 +13,31 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
-        <div className="container flex min-h-[80px] items-center justify-between gap-6 py-3">
+      <header className="sticky top-0 z-50 border-b border-[#0B2D5B]/10 bg-white/95 shadow-sm backdrop-blur-md">
+        <div className="container flex min-h-[84px] items-center justify-between gap-5 py-2">
+          {/* Brand */}
           <Link
             to="/"
             onClick={closeMenu}
             className="group flex shrink-0 items-center gap-3"
-            aria-label="Spectralink Global home"
+            aria-label="Spectralink Global Logistics Pvt Ltd home"
           >
-<img
-  src="/Logo.png"
-  alt="Spectralink Global Logistics"
-  className="h-17 w-17 object-contain transition-transform group-hover:scale-105"
-/>
+            <img
+              src="/Logo.png"
+              alt="Spectralink Global Logistics Pvt Ltd"
+              className="h-17 w-17 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
 
-            <span className="flex flex-col leading-none">
-              <span className="text-lg font-black tracking-tight text-[#0B2D5B]">
-                Spectralink Global
-              </span>
-
-              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Freight &amp; Logistics
-              </span>
+            <span className="max-w-[220px] text-[17px] font-black leading-[1.18] tracking-tight text-[#0B2D5B] sm:text-lg">
+              Spectralink Global
+              <br />
+              Logistics Pvt Ltd
             </span>
           </Link>
 
+          {/* Desktop navigation */}
           <nav
-            className="hidden flex-1 items-center justify-center gap-6 text-sm font-bold xl:flex"
+            className="hidden flex-1 items-center justify-center gap-6 xl:flex"
             aria-label="Primary navigation"
           >
             {nav.map(([label, path]) => (
@@ -48,10 +46,10 @@ export default function Navbar() {
                 to={path}
                 className={({ isActive }) =>
                   [
-                    'transition-colors duration-200',
+                    'whitespace-nowrap rounded-md px-1 py-2 text-sm font-bold transition-colors duration-200',
                     isActive
                       ? 'text-[#FF8A00]'
-                      : 'text-slate-700 hover:text-[#0B2D5B]',
+                      : 'text-[#0B2D5B]/85 hover:text-[#FF8A00]',
                   ].join(' ')
                 }
               >
@@ -60,67 +58,82 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden shrink-0 items-center gap-3 lg:flex">
+          {/* Desktop actions */}
+          <div className="hidden shrink-0 items-center gap-3 xl:flex">
             <a
               href={`tel:${company.phone}`}
-              className="btn btn-secondary whitespace-nowrap px-5"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#0B2D5B] px-5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#123c75] hover:shadow-md"
             >
-              <Phone size={17} />
-              Call Our Team
+              <Phone size={18} strokeWidth={2.25} />
+              <span>Call Our Team</span>
             </a>
 
             <a
               href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
-                'Quote Request - Spectralink Global'
+                'Quote Request - Spectralink Global Logistics Pvt Ltd'
               )}`}
-              className="btn btn-primary whitespace-nowrap px-5"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#FF8A00] px-5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#e67c00] hover:shadow-md"
             >
-              <Mail size={17} />
-              Email Us
+              <Mail size={18} strokeWidth={2.25} />
+              <span>Email Us</span>
             </a>
           </div>
 
+          {/* Tablet/mobile menu trigger */}
           <button
             type="button"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((current) => !current)}
-            className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-[#0B2D5B] transition hover:bg-slate-50 lg:hidden"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#0B2D5B]/15 text-[#0B2D5B] transition-colors duration-200 hover:bg-[#0B2D5B]/5 xl:hidden"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
+        {/* Mobile and tablet navigation */}
         {open && (
-          <div className="border-t border-slate-100 bg-white lg:hidden">
-            <div className="container grid gap-1 py-4">
-              {nav.map(([label, path]) => (
-                <Link
-                  key={path}
-                  to={path}
-                  onClick={closeMenu}
-                  className="rounded-lg px-3 py-3 font-semibold text-slate-700 transition hover:bg-slate-50 hover:text-[#0B2D5B]"
-                >
-                  {label}
-                </Link>
-              ))}
+          <div className="border-t border-[#0B2D5B]/10 bg-white xl:hidden">
+            <div className="container py-4">
+              <nav
+                className="grid gap-1"
+                aria-label="Mobile primary navigation"
+              >
+                {nav.map(([label, path]) => (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      [
+                        'rounded-xl px-4 py-3 text-sm font-bold transition-colors duration-200',
+                        isActive
+                          ? 'bg-[#0B2D5B]/5 text-[#FF8A00]'
+                          : 'text-[#0B2D5B] hover:bg-[#0B2D5B]/5',
+                      ].join(' ')
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                ))}
+              </nav>
 
-              <div className="mt-3 grid gap-3 border-t border-slate-100 pt-4 sm:grid-cols-2">
+              <div className="mt-4 grid gap-3 border-t border-[#0B2D5B]/10 pt-4 sm:grid-cols-2">
                 <a
                   href={`tel:${company.phone}`}
-                  className="btn btn-secondary justify-center"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#0B2D5B] px-5 text-sm font-bold text-white transition hover:bg-[#123c75]"
                 >
-                  <Phone size={17} />
+                  <Phone size={18} />
                   Call Our Team
                 </a>
 
                 <a
                   href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
-                    'Quote Request - Spectralink Global'
+                    'Quote Request - Spectralink Global Logistics Pvt Ltd'
                   )}`}
-                  className="btn btn-primary justify-center"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#FF8A00] px-5 text-sm font-bold text-white transition hover:bg-[#e67c00]"
                 >
-                  <Mail size={17} />
+                  <Mail size={18} />
                   Email Us
                 </a>
               </div>
@@ -129,20 +142,21 @@ export default function Navbar() {
         )}
       </header>
 
+      {/* Mobile sticky contact actions */}
       <div className="mobile-actions">
         <a
-          className="btn btn-secondary flex-1 justify-center"
           href={`tel:${company.phone}`}
+          className="btn btn-secondary flex-1 justify-center"
         >
           <Phone size={17} />
           Call
         </a>
 
         <a
-          className="btn btn-primary flex-1 justify-center"
           href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
-            'Quote Request - Spectralink Global'
+            'Quote Request - Spectralink Global Logistics Pvt Ltd'
           )}`}
+          className="btn btn-primary flex-1 justify-center"
         >
           <Mail size={17} />
           Email
