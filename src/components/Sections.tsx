@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   CheckCircle2,
-  PackageCheck,
-  Plane,
-  Ship,
-  ShieldCheck,
 } from 'lucide-react';
 
 import { cfsSteps, services, whyChoose } from '../data/site';
@@ -160,7 +156,6 @@ export function WorldMapVisual() {
         alt="Container ship carrying global freight across ocean routes"
         className="absolute inset-0 h-full w-full object-cover"
       />
-
-     </div>
+    </div>
   );
 }
