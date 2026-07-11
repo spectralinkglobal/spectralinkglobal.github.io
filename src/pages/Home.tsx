@@ -25,8 +25,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Freight Forwarding Company Mumbai | Spectralink Global Logistics"
-        description="Spectralink Global Logistics Pvt Ltd offers air freight, ocean freight, customs clearance and CFS operations in Mumbai."
+        title="Spectralink Global Private Limited | Freight Forwarding Mumbai"
+        description="Official website of Spectralink Global Private Limited, a Mumbai freight forwarding company offering air freight, ocean freight, customs clearance and CFS operations."
       />
 
       <section className="hero-bg map-grid flex min-h-[88vh] items-center">

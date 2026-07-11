@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://your-domain.com/</loc></url>
-  <url><loc>https://your-domain.com/about</loc></url>
-  <url><loc>https://your-domain.com/services</loc></url>
-  <url><loc>https://your-domain.com/cfs-operations</loc></url>
-  <url><loc>https://your-domain.com/global-network</loc></url>
-  <url><loc>https://your-domain.com/contact</loc></url>
+  <url><loc>https://spectralinkglobal.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://spectralinkglobal.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://spectralinkglobal.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://spectralinkglobal.com/cfs-operations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://spectralinkglobal.com/global-network</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://spectralinkglobal.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
